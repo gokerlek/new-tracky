@@ -16,9 +16,10 @@
 
 import iconList from "../hooks/iconList.jsx";
 
-const Icon = ({ purpose = "", width, height, color }) => {
+const Icon = ({ purpose = "", width, height, color, className }) => {
   return (
     <div
+      className={className}
       style={{
         width: width,
         height: height,
