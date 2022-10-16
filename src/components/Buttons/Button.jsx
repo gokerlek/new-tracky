@@ -28,20 +28,38 @@ const Button = ({
   };
 
   const disabledClassName = {
-    "opacity-50 cursor-not-allowed hover:scale-100": disabled,
+    " cursor-not-allowed hover:scale-100": disabled,
   };
 
   const containerClassName = {
-    purple: clsx(
-      " flex items-center justify-center bg-primary hover:bg-primarySoft rounded px-8",
+    blue: clsx(
+      " flex items-center justify-center bg-primary hover:bg-primarySoft rounded-lg px-8",
       "h-12 text-white font-medium cursor-pointer text-center",
       "animate-bigger w-full",
       disabledClassName
     ),
 
     google: clsx(
-      "flex items-center justify-center bg-white rounded px-8 border-card border",
-      "h-12 text-gray-500 font-medium cursor-pointer text-center",
+      "flex items-center justify-center bg-white rounded-lg px-8 border-card border",
+      "h-12 text-primary font-medium cursor-pointer text-center",
+      "animate-bigger w-full",
+      disabledClassName
+    ),
+
+    archive: clsx(
+      "flex items-center justify-center  rounded gap-1 px-2 py-1.5 ",
+      "  text-xs  cursor-pointer text-center",
+      "animate-bigger",
+      disabledClassName,
+      {
+        "bg-tGray-200 text-tGray-800 font-light": disabled,
+        "bg-tPurple-100 text-tGray-700 font-light": !disabled,
+      }
+    ),
+
+    "add-new-project": clsx(
+      "flex items-center justify-end bg-tPurple-300 rounded-lg pr-6 gap-2",
+      "h-10 text-tGray-700 font-medium cursor-pointer",
       "animate-bigger w-full",
       disabledClassName
     ),

@@ -13,7 +13,7 @@ const Input = ({ purpose, control, register }) => {
   );
 
   const {
-    field: { onChange, value },
+    field: { onChange },
     fieldState: { error },
   } = useController({
     control,
@@ -35,7 +35,7 @@ const Input = ({ purpose, control, register }) => {
           type={type}
           onChange={onChange}
           className={clsx(
-            "block appearance-none bg-t100 w-full border  rounded py-2  shadow-sm ",
+            " appearance-none bg-t100  border  rounded-md py-2  shadow-sm ",
             " placeholder:text-t700 animate-shadow ",
             "focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm",
             {
@@ -45,6 +45,9 @@ const Input = ({ purpose, control, register }) => {
               "pl-3": !leftIcon,
               "border-t500": !error,
               "border-error": error,
+              "w-12 h-12 flex items-center justify-center text-center":
+                purpose.includes("code"),
+              "w-full block": !purpose.includes("code"),
             }
           )}
           placeholder={placeholder}

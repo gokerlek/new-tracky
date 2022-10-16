@@ -32,7 +32,7 @@ export default {
   "Terms of Use": "Terms of Use",
   "Create free account": "Create free account",
   "A new time management tool youll": "A new time management tool you'll",
-  "actually love": "actually love",
+  "actually love": "actually love.",
   "Functional and practical Start tracking your progress in the most efficient way possible":
     "Functional and practical. Start tracking your progress in the most efficient way possible.",
 
@@ -81,11 +81,15 @@ export default {
   "Quick search": "Quick search",
   Reports: "Reports",
   Archive: "Archive",
-  PROJECTS: "PROJECTS",
+  Projects: "PROJECTS",
   "Hey there": "Hey there!",
-  "You have no projects in your list lets begin with a new one":
-    "You have no projects in your list, let's begin with a new one!",
+  "You have no projects in your list lets begin with a new one": `You have no projects in your list, 
+
+let's begin with a new one!`,
   "Create a Project": "Create a Project",
+  "Wanna recreate a project Add a task": `Wanna recreate a project?
+
+Add a task!`,
 
   //NO ACTIVITY
   Share: "Share",

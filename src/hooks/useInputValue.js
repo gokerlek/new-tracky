@@ -110,11 +110,67 @@ const useInputValue = (purpose, t) => {
       type: "password",
     },
 
+    choosePassword: {
+      name: purpose,
+      label: "",
+      placeholder: "Choose password",
+      type: "password",
+    },
+
     newPassword: {
       name: purpose,
       label: "",
-      placeholder: "",
+      placeholder: "New password",
       type: "password",
+    },
+
+    kode: {
+      name: purpose,
+      label: "",
+      placeholder: "Code",
+      type: "text",
+    },
+
+    code1: {
+      name: purpose,
+      label: "",
+      placeholder: "0",
+      type: "text",
+    },
+
+    code2: {
+      name: purpose,
+      label: "",
+      placeholder: "0",
+      type: "text",
+    },
+
+    code3: {
+      name: purpose,
+      label: "",
+      placeholder: "0",
+      type: "text",
+    },
+
+    code4: {
+      name: purpose,
+      label: "",
+      placeholder: "0",
+      type: "text",
+    },
+
+    code5: {
+      name: purpose,
+      label: "",
+      placeholder: "0",
+      type: "text",
+    },
+
+    code6: {
+      name: purpose,
+      label: "",
+      placeholder: "0",
+      type: "text",
     },
 
     confirmNewPassword: {

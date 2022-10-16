@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Input, Text, Button, Checkbox, Icon } from "../../components/index.js";
+import { Input, Text, Button, Icon } from "../../components/index.js";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
@@ -31,13 +31,13 @@ const ForgotPassword = () => {
     <div className="h-full w-full flex items-center justify-center">
       <div className="flex flex-col items-center justify-start gap-4 rounded-xl shadow-card bg-white max-w-form w-full p-10">
         <Icon purpose="forgot-password" />
-        <Text className="form-title capitalize">Forgot password</Text>
+        <Text className="form-small-title capitalize mb-2">
+          Forgot password
+        </Text>
 
-        <div className="flex flex-col gap-4 w-full">
-          <Input purpose={"email"} control={control} register={register} />
-        </div>
+        <Input purpose={"email"} control={control} register={register} />
 
-        <Button purpose="purple" disabled={!isValid}>
+        <Button purpose="blue" disabled={!isValid}>
           Reset password
         </Button>
 
