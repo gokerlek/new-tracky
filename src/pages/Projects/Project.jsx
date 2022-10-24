@@ -14,7 +14,7 @@ const Projects = () => {
       <TrackerBar />
 
       {activities.length === 0 && (
-        <div className="w-full h-full flex flex-col items-center justify-center  gap-5">
+        <div className="w-full h-full flex  flex-col items-center justify-center  gap-5">
           <Icon purpose="no-activity" />
           <Text className="text-xl text-tGray-700 font-medium">
             No activity logged yet
