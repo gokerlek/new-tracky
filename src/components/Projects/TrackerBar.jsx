@@ -3,7 +3,17 @@ import { useMatch } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import clsx from "clsx";
-import { Dropdown, Icon, Text } from "../index.js";
+import {
+  ClearHistory,
+  DeleteProject,
+  Dropdown,
+  EditDetails,
+  ExportPdf,
+  FormModal,
+  Icon,
+  LoggedTime,
+  Text,
+} from "../index.js";
 
 const TrackerBar = () => {
   const match = useMatch("projects/:projectName");
@@ -13,6 +23,18 @@ const TrackerBar = () => {
   const projectName = match?.params?.projectName;
 
   const [isPlaying, setIsPlaying] = useState(false);
+
+  const [isEditDetailsModalOpen, setIsEditDetailsModalOpen] = useState(false);
+
+  const [isDeleteProjectModalOpen, setIsDeleteProjectModalOpen] =
+    useState(false);
+
+  const [isProjectDownloadModalOpen, setIsProjectDownloadModalOpen] =
+    useState(false);
+
+  const [isClearHistoryModalOpen, setIsClearHistoryModalOpen] = useState(false);
+
+  const [isLogTimeModalOpen, setIsLogTimeModalOpen] = useState(false);
 
   const { register, handleSubmit, watch } = useForm();
 
@@ -24,7 +46,9 @@ const TrackerBar = () => {
 
   const totalEarned = "20"; //TODO: get from context
 
-  const download = () => console.log("download");
+  const download = () => setIsProjectDownloadModalOpen(true);
+
+  const openLogTimeModal = () => setIsLogTimeModalOpen(true);
 
   const playPause = () => {
     setIsPlaying(!isPlaying);
@@ -32,10 +56,16 @@ const TrackerBar = () => {
   };
 
   const options = [
-    { label: "Edit details", action: () => console.log("edit") },
+    { label: "Edit details", action: () => setIsEditDetailsModalOpen(true) },
     { label: "Archive", action: () => console.log("archive") },
-    { label: "Clear all history", action: () => console.log("clear") },
-    { label: "Delete project", action: () => console.log("delete") },
+    {
+      label: "Clear all history",
+      action: () => setIsClearHistoryModalOpen(true),
+    },
+    {
+      label: "Delete project",
+      action: () => setIsDeleteProjectModalOpen(true),
+    },
   ];
 
   return (
@@ -77,7 +107,7 @@ const TrackerBar = () => {
           </div>
 
           <Icon
-            className="animate-bigger-125 cursor-pointer"
+            className="animate-bigger-125 cursor-pointer text-[#808080]"
             purpose="download"
             onClick={download}
           />
@@ -103,9 +133,48 @@ const TrackerBar = () => {
 
           <Icon onClick={playPause} purpose={isPlaying ? "pause" : "play"} />
 
-          <Icon purpose="calender" />
+          <Icon
+            className="animate-bigger-125 cursor-pointer"
+            purpose="calender"
+            onClick={openLogTimeModal}
+          />
         </div>
       </div>
+
+      <FormModal
+        form={EditDetails}
+        successPurpose="edit-details"
+        isOpen={isEditDetailsModalOpen}
+        setIsOpen={setIsEditDetailsModalOpen}
+      />
+
+      <FormModal
+        form={DeleteProject}
+        successPurpose="delete-project"
+        isOpen={isDeleteProjectModalOpen}
+        setIsOpen={setIsDeleteProjectModalOpen}
+      />
+
+      <FormModal
+        form={ExportPdf}
+        successPurpose="project-downloaded"
+        isOpen={isProjectDownloadModalOpen}
+        setIsOpen={setIsProjectDownloadModalOpen}
+      />
+
+      <FormModal
+        form={ClearHistory}
+        successPurpose="history-cleared"
+        isOpen={isClearHistoryModalOpen}
+        setIsOpen={setIsClearHistoryModalOpen}
+      />
+
+      <FormModal
+        form={LoggedTime}
+        successPurpose="logged-time"
+        isOpen={isLogTimeModalOpen}
+        setIsOpen={setIsLogTimeModalOpen}
+      />
     </div>
   );
 };

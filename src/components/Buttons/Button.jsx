@@ -9,6 +9,8 @@ const Button = ({
   rightIcon,
   purpose = "orange",
   className,
+  fit,
+  height,
   disabled,
 }) => {
   const { t } = useTranslation();
@@ -33,16 +35,37 @@ const Button = ({
 
   const containerClassName = {
     blue: clsx(
-      " flex items-center justify-center bg-primary hover:bg-primarySoft rounded-lg px-8",
+      " flex items-center justify-center  rounded-lg px-8",
       "h-12 text-white font-medium cursor-pointer text-center",
-      "animate-bigger w-full",
-      disabledClassName
+      "animate-bigger",
+      disabledClassName,
+      {
+        "bg-tGray-900 hover:bg-tGray-900": disabled,
+        "bg-primary": !disabled,
+        "w-full": !fit,
+        "w-fit": fit,
+        "h-12": !height,
+      }
     ),
 
     google: clsx(
       "flex items-center justify-center bg-white rounded-lg px-8 border-card border",
       "h-12 text-primary font-medium cursor-pointer text-center",
       "animate-bigger w-full",
+      disabledClassName
+    ),
+
+    white: clsx(
+      "flex items-center justify-center bg-white rounded-md p-2 border-card border",
+      " text-primary font-medium cursor-pointer text-center text-sm",
+      "animate-bigger w-fit min-w-[100px]",
+      disabledClassName
+    ),
+
+    whiteFull: clsx(
+      "flex items-center justify-center bg-white rounded-md p-2 border-card border",
+      " text-primary font-medium cursor-pointer text-center text-sm",
+      "animate-bigger w-full h-[38px]",
       disabledClassName
     ),
 
@@ -57,6 +80,11 @@ const Button = ({
       }
     ),
 
+    logout: clsx(
+      "flex items-center justify-start  gap-1",
+      "  text-sm text-tGray-500 font-normal hover:font-medium  cursor-pointer"
+    ),
+
     "add-new-project": clsx(
       "flex items-center justify-end bg-tPurple-300 rounded-lg pr-6 gap-2",
       "h-10 text-tGray-700 font-medium cursor-pointer",
@@ -67,6 +95,7 @@ const Button = ({
 
   return (
     <div
+      style={{ height: height ?? null }}
       className={className ?? containerClassName[purpose]}
       onClick={disabled ? null : onClick}
     >

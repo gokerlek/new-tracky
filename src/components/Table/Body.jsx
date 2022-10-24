@@ -1,8 +1,9 @@
-import { Checkbox, Icon, Dropdown } from "../index";
+import { useState } from "react";
+import { Checkbox, Icon, Dropdown, FormModal, EditActivity } from "../index";
 import { useFieldArray } from "react-hook-form";
 import clsx from "clsx";
 
-const TableBody = ({ control, name }) => {
+const TableBody = ({ control, name, purpose }) => {
   const { fields, remove, update } = useFieldArray({ control, name: name });
 
   const handleCheck = (index) => {
@@ -12,19 +13,42 @@ const TableBody = ({ control, name }) => {
   const descriptionCondition = (item) =>
     !!(item.activityDescription || item.activityDescription !== "");
 
-  const editData = (index) => {
-    return [
-      {
-        label: "Archive",
-        action: () => {
-          console.log("Option 1");
-        },
-      },
-      {
-        label: "Delete activity",
-        action: () => remove(index),
-      },
-    ];
+  const [isActivityModalOpen, setIsActivityModalOpen] = useState(false);
+
+  const openEditActivityModal = () => {
+    setIsActivityModalOpen(true);
+  };
+
+  const dropdownOptions = (purpose, index) => {
+    switch (purpose) {
+      case "project":
+        return [
+          {
+            label: "Archive",
+            action: () => {
+              console.log("Option 1");
+            },
+          },
+          {
+            label: "Delete activity",
+            action: () => remove(index),
+          },
+        ];
+
+      case "archive":
+        return [
+          {
+            label: "Add back to activity",
+            action: () => {
+              console.log("Option 1");
+            },
+          },
+          {
+            label: "Delete permanently",
+            action: () => remove(index),
+          },
+        ];
+    }
   };
 
   return fields?.map((item, index) => {
@@ -65,10 +89,21 @@ const TableBody = ({ control, name }) => {
         <div className="w-[18%]">{item.loggedHour}</div>
 
         <div className="flex flex-row items-start justify-end gap-8 w-[8%]">
-          <Icon purpose="edit" />
+          <Icon
+            className="animate-bigger-125 cursor-pointer"
+            purpose="edit"
+            onClick={openEditActivityModal}
+          />
 
-          <Dropdown options={editData(index)} />
+          <Dropdown options={dropdownOptions(purpose, index)} />
         </div>
+
+        <FormModal
+          isOpen={isActivityModalOpen}
+          setIsOpen={setIsActivityModalOpen}
+          successPurpose="details-saved"
+          form={EditActivity}
+        />
       </div>
     );
   });

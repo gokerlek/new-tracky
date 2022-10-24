@@ -52,7 +52,7 @@ const AuthLayout = ({ login }) => {
         <div className="w-1/2 h-screen bg-tBaseColor flex flex-col gap-5 justify-center items-end pl-10 max-h-[800px">
           <div className="flex flex-col items-start pl-12 gap-5 text-t900  text-lg">
             <div className="inline text-4xl text-primary font-semibold gap-2 prose-strong:text-tOrange-500">
-              {t("A new time management tool youll actually love")}{" "}
+              {t("A new time management tool you ll")}{" "}
               <span className="text-tOrange-500">{t("actually love")}</span>{" "}
               <Paper className="inline" />
             </div>

@@ -8,63 +8,63 @@ const useInputValue = (purpose, t) => {
   const inputValues = {
     projectName: {
       name: purpose,
-      label: "",
-      placeholder: "",
+      label: "Project name",
+      placeholder: "Ex Tracky",
       type: "text",
     },
     currency: {
       name: purpose,
-      label: "",
-      placeholder: "",
+      label: "Currency",
+      placeholder: "US Dollar",
       type: "text",
     },
     hourlyRate: {
       name: purpose,
-      label: "",
-      placeholder: "",
+      label: "Hourly rate",
+      placeholder: "0.00",
       type: "text",
     },
 
     activityDescription: {
       name: purpose,
-      label: "",
-      placeholder: "",
+      label: "Activity description",
+      placeholder: "Ex. Designing",
       type: "text",
     },
     startDate: {
       name: purpose,
-      label: "",
+      label: "Start date",
       placeholder: "",
       type: "text",
     },
     end: {
       name: purpose,
-      label: "",
+      label: "End date",
       placeholder: "",
       type: "text",
     },
     duration: {
       name: purpose,
-      label: "",
+      label: "Duration",
       placeholder: "",
       type: "text",
     },
     workedFrom: {
       name: purpose,
-      label: "",
+      label: "Worked from",
       placeholder: "",
       type: "text",
     },
     to: {
       name: purpose,
-      label: "",
+      label: "To",
       placeholder: "",
       type: "text",
     },
 
-    shareLiveLink: {
+    shareLink: {
       name: purpose,
-      label: "",
+      label: "Share live link",
       placeholder: "",
       type: "text",
     },
@@ -105,8 +105,8 @@ const useInputValue = (purpose, t) => {
 
     currentPassword: {
       name: purpose,
-      label: "",
-      placeholder: "",
+      label: "Current password",
+      placeholder: "Current password",
       type: "password",
     },
 
@@ -119,7 +119,7 @@ const useInputValue = (purpose, t) => {
 
     newPassword: {
       name: purpose,
-      label: "",
+      label: "New password",
       placeholder: "New password",
       type: "password",
     },
@@ -175,8 +175,8 @@ const useInputValue = (purpose, t) => {
 
     confirmNewPassword: {
       name: purpose,
-      label: "",
-      placeholder: "",
+      label: "Confirm new password",
+      placeholder: "Confirm new password",
       type: "password",
     },
 
@@ -190,6 +190,12 @@ const useInputValue = (purpose, t) => {
     referenceCode: {
       name: purpose,
       type: "text",
+    },
+
+    preferredName: {
+      name: purpose,
+      label: "Preferred name",
+      placeholder: "Your name",
     },
   };
 

@@ -5,7 +5,7 @@ import List from "./List.jsx";
 const data = ["book", "map", "calendar", "clock"];
 
 const Projects = () => {
-  const openAddNewProjectModal = () => console.log("openAddNewProjectModal");
+  const openAddNewProjectModal = () => console.log("openAddNewcccProjectModal");
 
   return (
     <div className="mt-14 min-h-[40px] border-y border-border">

@@ -1,10 +1,10 @@
 import useInputValue from "../../hooks/useInputValue.js";
 import { useController } from "react-hook-form";
 import clsx from "clsx";
-import { Icon } from "../index.js";
+import { Icon, Text } from "../index.js";
 import { useTranslation } from "react-i18next";
 
-const Input = ({ purpose, control, register }) => {
+const Input = ({ purpose, control, register, disabled, darkLabel }) => {
   const { t } = useTranslation();
 
   const { name, label, placeholder, leftIcon, rightIcon, type } = useInputValue(
@@ -22,7 +22,14 @@ const Input = ({ purpose, control, register }) => {
 
   return (
     <div className="flex flex-col w-full">
-      <label className="text-sm font-medium text-gray-700">{label}</label>
+      <Text
+        className={clsx("text-sm font-medium  mb-1", {
+          "text-tGray-700": darkLabel,
+          "text-tGray-600": !darkLabel,
+        })}
+      >
+        {label}
+      </Text>
 
       <label className="relative flex w-full ">
         {leftIcon && (
@@ -50,7 +57,8 @@ const Input = ({ purpose, control, register }) => {
               "w-full block": !purpose.includes("code"),
             }
           )}
-          placeholder={placeholder}
+          placeholder={t(placeholder)}
+          disabled={disabled}
           {...register(name)}
         />
 

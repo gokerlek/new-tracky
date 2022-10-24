@@ -1,9 +1,12 @@
 import * as React from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { Icon, Text } from "./index.js";
+import { Icon, Text, ProfileModal } from "./index.js";
 import clsx from "clsx";
 
 const NavLinks = () => {
+  const [isOpenProfile, setIsOpenProfile] = useState(false);
+
   const linkBaseClassName = (isActive, conditional) =>
     clsx(
       " flex flex-row items-center justify-start gap-3 h-8 px-5 text-base text-tGray-500 hover:text-tGray-700 hover:bg-tGray-100 ",
@@ -18,8 +21,9 @@ const NavLinks = () => {
     <ul className="flex flex-col gap-2 mt-4">
       <li>
         <NavLink
-          className={({ isActive }) => linkBaseClassName(isActive, "between")}
-          to="/profile"
+          className={linkBaseClassName(false, "between")}
+          to="#"
+          onClick={() => setIsOpenProfile(true)}
         >
           <div className="flex items-center justify-start gap-3 w-full">
             <Icon purpose="profile" />
@@ -61,6 +65,7 @@ const NavLinks = () => {
           </Text>
         </NavLink>
       </li>
+      <ProfileModal isOpen={isOpenProfile} setIsOpen={setIsOpenProfile} />
     </ul>
   );
 };

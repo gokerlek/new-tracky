@@ -31,7 +31,7 @@ export default {
   "I agree to the": "I agree to the",
   "Terms of Use": "Terms of Use",
   "Create free account": "Create free account",
-  "A new time management tool youll": "A new time management tool you'll",
+  "A new time management tool you ll": `A new time management tool you'll`,
   "actually love": "actually love.",
   "Functional and practical Start tracking your progress in the most efficient way possible":
     "Functional and practical. Start tracking your progress in the most efficient way possible.",
@@ -51,6 +51,8 @@ export default {
   Unlimited: "Unlimited",
   month: "/month",
   "Payment per month for personal use": "Payment per month for personal use",
+  "Pay for what you need and benefit from the features you ll use the most":
+    "Pay for what you need and benefit from the features you’ll use the most.",
   "100 Blocks": "100+ Blocks",
   "Free Typography": "Free Typography",
   "Support Team": "Support Team",
@@ -71,7 +73,7 @@ export default {
 
   //TIME-LOG MODAL
   "Export as PDF": "Export as PDF",
-  "Start Date": "Start Date",
+  "Start date": "Start Date*",
   End: "End",
   Export: "Export",
   Clear: "Clear",
@@ -146,11 +148,15 @@ Add a task!`,
   "Activity Description": "Activity Description",
   "Details updated successfully": "Details updated successfully!",
   "Details saved successfully": "Details saved successfully!",
+  "Ex Tracky": "Ex. Tracky",
+  "US Dollar": "U.S. Dollar",
 
   //NEW TRACKER PROJECT
   "New Project": "New Project",
   "Create project": "Create project",
   "Project created successfully": "Project created successfully!",
+  "You created a new project and I ll always be here to create more projects woof woof":
+    "You created a new project and I’ll always be here to create more projects, woof woof!",
 
   //SEARCH
   "ALL PROJECT": "ALL PROJECT",
@@ -162,8 +168,8 @@ Add a task!`,
   Subscriptions: "Subscriptions",
   "Log out": "Log out",
   "Profile Image": "Profile Image",
-  "Company logo will appear in shared reports and branded PDF exports Formats png jpg gif Max size MB":
-    "Company logo will appear in shared reports and branded PDF exports. Formats: png, jpg, gif. Max size: MB.",
+  "Company logo will appear in shared reports and branded PDF exports Formats png jpg gif Max size 1MB": `Company logo will appear in shared reports and branded 
+PDF exports. Formats: png, jpg, gif. Max size: 1MB.`,
   "Upload image": "Upload image",
   "Preferred name": "Preferred name",
   "Your name": "Your name",
@@ -219,4 +225,23 @@ Add a task!`,
   "Account deleted successfully": "Account deleted succesfully!",
   "Sorry to see you leaving Goodbye until next time":
     "Sorry to see you leaving :( Goodbye until next time!",
+
+  //PROJECTS
+  "View and download the details of selected project": `
+View and download the details 
+
+of selected project`,
+  "Total earned": "Total earned",
+  "No selected projects": "No selected projects ",
+
+  "Single project available": `Single project available`,
+  "Time tracker": `Time tracker`,
+  Report: `Reports`,
+  "Try out Tracky with creating only one project and see how it goes":
+    "Try out Tracky with creating only one project and see how it goes.",
+  "one project": `one project`,
+  "Get started free": `Get started free`,
+  "Only for Tracking project": `Only for Tracking project`,
+  "As many projects as you want": `As many projects as you want`,
+  "Time tracker per project": `Time tracker per project`,
 };
