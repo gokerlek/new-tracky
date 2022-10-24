@@ -22,7 +22,7 @@ const Projects = () => {
         </div>
       )}
 
-      <div className=" h-full w-full overflow-y-auto mt-4">
+      <div className=" h-full a w-full overflow-y-auto mt-4">
         <div className="flex flex-col gap-5">
           {activities.map((activity, index) => (
             <Table
