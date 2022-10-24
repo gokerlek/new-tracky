@@ -16,9 +16,11 @@
 
 import iconList from "../hooks/iconList.jsx";
 
-const Icon = ({ purpose = "", width, height, color }) => {
+const Icon = ({ purpose = "", width, height, color, className, onClick }) => {
   return (
     <div
+      className={className}
+      onClick={onClick}
       style={{
         width: width,
         height: height,
